@@ -1,0 +1,25 @@
+# Local environments, credentials and relay state
+.venv/
+venv/
+node_modules/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+enrollment-token
+rooms.json
+.rooms-*
+ccapp-hosting.json
+ccapp-hosting-actions.json
+*.jsonl
+*.sqlite*
+*.log
+*.tap
+__pycache__/
+*.py[cod]
+.coverage
+coverage/
+.DS_Store

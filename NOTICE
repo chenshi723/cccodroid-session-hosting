@@ -1,0 +1,15 @@
+cccodroid Session Hosting
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The gateway integration is based on cccodroid.
+cccodroid — Copyright 2026 greyoak111 and contributors
+Upstream: https://github.com/greyoak111/cccodroid
+
+This distribution is a source-only extraction of the session hosting feature,
+not the complete upstream app. The panel omits its deployment-specific relay
+preset. Tests are adapted to the standalone directory layout and local fixtures.
+
+This project is not affiliated with or endorsed by Anthropic. Claude Code is
+proprietary software of Anthropic PBC and is not distributed with this project.
+The relay uses aiohttp as a separately installed dependency; no third-party
+runtime binaries or vendored libraries are included.

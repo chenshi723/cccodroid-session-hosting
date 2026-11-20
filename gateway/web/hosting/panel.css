@@ -1,0 +1,111 @@
+/* 托管配置：窄屏弹层，宽屏接入原右侧工作栏；主题仍使用应用变量。 */
+#btn-hosting{position:relative}
+#btn-hosting[aria-expanded="true"]{color:var(--accent);background:var(--bg3)}
+.cch-panel{color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:0;max-width:980px;width:calc(100% - 32px);height:min(860px,calc(100dvh - 40px));max-height:calc(100dvh - 40px);margin:auto;overflow:hidden;box-shadow:0 18px 70px var(--shadow);font:inherit}
+.cch-panel[open]{display:flex;flex-direction:column}
+html.has-right #cch-panel{position:fixed;inset:0;inset-inline-start:auto;display:flex;flex-direction:column;width:var(--rw);max-width:none;height:100%;max-height:none;margin:0;padding:var(--safe-tp) 0 var(--safe-b);border:0;border-inline-start:1px solid var(--line);border-radius:0;border-start-start-radius:var(--g3);border-end-start-radius:var(--g3);box-shadow:none;z-index:70}
+html.has-right #cch-panel.ws-top{z-index:71}
+html.has-right #cch-panel:not(.ws-top){visibility:hidden;pointer-events:none}
+html.ws-multi #cch-panel{padding-top:calc(var(--safe-tp) + 38px)}
+html.has-right #cch-panel .cch-top{padding-top:8px}
+.cch-panel::backdrop{background:var(--scrim)}
+.cch-panel *{box-sizing:border-box}
+.cch-panel [hidden]{display:none!important}
+.cch-panel :is(button,input,textarea,select){font:inherit;letter-spacing:normal}
+.cch-panel :is(button,input,textarea,select,summary):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cch-panel :is(h2,h3,p,pre){margin:0}
+.cch-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);flex:0 0 auto}
+.cch-top h2{font-size:18px;font-weight:650}
+.cch-tabs{display:flex;gap:6px;padding:10px 16px 8px;flex:0 0 auto}
+.cch-tabs .cch-btn{flex:1;border-color:transparent;background:transparent;color:var(--fg2)}
+.cch-tabs .cch-btn[aria-current="page"]{background:var(--bg3);border-color:var(--line);color:var(--fg);font-weight:600}
+.cch-body{padding:8px 18px 20px;overflow:auto;min-height:0;flex:1;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.cch-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 13px;line-height:1.35;color:var(--fg);background:var(--bg3);border:1px solid var(--line);border-radius:10px;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+.cch-btn:active:not(:disabled){background:var(--bg4)}
+.cch-btn:disabled{opacity:.42;cursor:default}
+.cch-btn.cch-primary{background:var(--accent-btn,var(--accent));color:var(--on-accent);border-color:transparent}
+.cch-btn.cch-primary:active:not(:disabled){filter:brightness(.9)}
+.cch-btn.cch-danger{color:var(--err)}
+.cch-btn.cch-quiet{background:transparent;border-color:transparent;color:var(--fg2)}
+.cch-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cch-row>h3{font-size:16px;font-weight:600;flex:1;min-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cch-card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0;overflow-wrap:anywhere}
+.cch-card>h3{font-size:15px;font-weight:650;margin-bottom:10px}
+.cch-card>.cch-row,.cch-card>.cch-btn{margin-top:10px}
+.cch-note{font-size:12px;color:var(--fg2);line-height:1.65;overflow-wrap:anywhere}
+.cch-card>.cch-note{margin:5px 0 10px}
+.cch-field{display:flex;flex-direction:column;gap:6px;margin:13px 0;font-size:13px;color:var(--fg2)}
+.cch-panel :is(input:not([type="checkbox"]):not([type="radio"]),textarea,select){border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);min-height:44px;padding:10px 12px;width:100%;min-width:0;line-height:1.5}
+.cch-panel textarea{resize:vertical;max-height:180px}
+.cch-panel select{flex:1;min-width:140px}
+.cch-panel :is(input,textarea)::placeholder{color:var(--fg3)}
+.cch-notice{margin:3px 18px 7px;padding:9px 11px;border-radius:10px;background:var(--bg3);color:var(--fg2);font-size:12px;line-height:1.55;flex:0 0 auto;max-height:110px;overflow:auto;overflow-wrap:anywhere}
+.cch-notice.cch-error{background:var(--err-bg);color:var(--err-fg);border:1px solid var(--err-line)}
+.cch-state{font-size:12px;color:var(--warn);line-height:1.5;margin:8px 0!important;overflow-wrap:anywhere;flex:0 0 auto}
+.cch-state.cch-ok{color:var(--ok)}
+.cch-list{margin-top:6px}
+.cch-listrow{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.cch-listrow:first-child{border-top:0}
+.cch-listrow>div:first-child{flex:1;min-width:0;overflow-wrap:anywhere}
+.cch-listrow b{display:block;font-weight:600;font-size:14px}
+.cch-listrow .cch-btn{flex-shrink:0}
+.cch-listrow .cch-row{flex:0 0 auto;gap:3px}
+.cch-listrow .cch-row .cch-btn{padding-inline:9px}
+.cch-code{margin-top:12px;padding:12px;border:1px solid var(--warn);border-radius:10px}
+.cch-code>textarea{font-family:var(--mono);font-size:12px;margin:10px 0;word-break:break-all}
+.cch-help{font-size:12px;color:var(--fg2);margin:16px 0 4px;padding:10px 0}
+.cch-help summary{cursor:pointer;min-height:32px;color:var(--fg)}
+.cch-help p{margin:7px 0}
+.cch-session{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px;margin:9px 0;text-align:start;background:var(--bg2)}
+.cch-session b{font-size:14px;font-weight:600}
+.cch-session small{font-size:11px;color:var(--fg2);flex-shrink:0}
+@media(max-width:600px){
+  .cch-panel{width:100%;max-width:100%;height:100dvh;max-height:100dvh;border:0;border-radius:0;margin:0}
+  .cch-top{padding:calc(var(--safe-t,0px) + 8px) 13px 8px}
+  .cch-tabs{padding:8px 10px;gap:4px}
+  .cch-tabs .cch-btn{font-size:12.5px;padding-inline:5px}
+  .cch-body{padding:6px 12px calc(var(--safe-b,0px) + 12px)}
+  .cch-notice{margin-inline:12px}
+  .cch-card{padding:13px}
+}
+@media(max-height:520px){
+  .cch-panel{height:100dvh;max-height:100dvh}
+  .cch-top{padding-block:5px}.cch-tabs{padding-block:4px}
+}
+
+/* 构成主题沿用原生控件的墨线、硬投影和斜切选中态；颜色、纸色与字体仍由用户设置决定。 */
+html[data-skin="goucheng"] .cch-top{border-bottom:2px solid var(--gc-ink)}
+html[data-skin="goucheng"] .cch-tabs{margin:12px 18px 6px;padding:2px;gap:0;border:1.5px solid var(--gc-ink)}
+html[data-skin="goucheng"] .cch-tabs .cch-btn{min-height:40px;padding:7px 12px;border:0;background:transparent}
+html[data-skin="goucheng"] .cch-tabs .cch-btn[aria-current="page"]{background:var(--gc-red);color:var(--on-accent);clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
+html[data-skin="goucheng"] .cch-tabs .cch-btn:focus-visible{outline-offset:-4px}
+html[data-skin="goucheng"] .cch-tabs .cch-btn[aria-current="page"]:focus-visible{outline-color:var(--on-accent)}
+html[data-skin="goucheng"] .cch-card:not(.cch-permission){background:var(--panel);border:1.5px solid var(--gc-ink);box-shadow:3px 3px 0 var(--gc-hard)}
+html[data-skin="goucheng"] .cch-field>span{color:var(--fg)}
+html[data-skin="goucheng"] .cch-panel :is(input:not([type="checkbox"]):not([type="radio"]),textarea,select){background:var(--input-bg,var(--panel));border-color:var(--gc-ink)}
+html[data-skin="goucheng"] .cch-panel :is(input,textarea,select):focus{border-color:var(--accent)}
+html[data-skin="goucheng"] .cch-body .cch-btn:not(.cch-quiet){border:2px solid var(--gc-ink);box-shadow:2px 2px 0 var(--gc-hard);transition:transform .08s,box-shadow .08s}
+html[data-skin="goucheng"] .cch-body .cch-btn:not(.cch-quiet):active:not(:disabled){transform:translate(1px,1px);box-shadow:1px 1px 0 var(--gc-hard)}
+html[data-skin="goucheng"] .cch-body .cch-btn.cch-primary:active:not(:disabled){background:var(--accent-btn);filter:none}
+html[data-skin="goucheng"] .cch-body .cch-btn.cch-danger{border-color:var(--err)}
+html[data-skin="goucheng"] .cch-help{border-top:1px solid var(--line);padding-top:12px}
+@media(min-width:601px){
+  html[data-skin="goucheng"] .cch-panel{border:2px solid var(--gc-ink);box-shadow:5px 5px 0 var(--gc-hard)}
+}
+@media(max-width:600px){
+  html[data-skin="goucheng"] .cch-tabs{margin:10px 12px 6px}
+  html[data-skin="goucheng"] .cch-tabs .cch-btn{padding-inline:8px}
+}
+@media(max-height:520px){
+  html[data-skin="goucheng"] .cch-tabs{margin-block:5px}
+  html[data-skin="goucheng"] .cch-tabs .cch-btn{min-height:34px;padding-block:4px}
+}
+
+/* 来源只同步文字；隐藏本机工具入口，不为远程另做聊天样式。 */
+html.cc-remote-source :is(#btn-files,#btn-term,#btn-web,#btn-palette,#btn-attach){display:none!important}
+
+/* 侧栏「远程」分组只列会话，设备管理保留在原有托管设置入口。 */
+.cch-remote-group .cch-rs-dev{flex:0 1 auto;max-width:38%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-style:normal;font-size:10.5px;color:var(--fg3);margin-inline-start:4px}
+.cch-remote-group .cch-rs-item{padding-inline-end:10px}
+.cch-remote-group .cch-rs-empty{padding:2px 12px 4px 19px;font-size:11.5px;color:var(--fg3);line-height:1.5}
+
